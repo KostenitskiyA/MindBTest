@@ -1,4 +1,4 @@
-﻿namespace SquareСalculator.Figures
+namespace SquareСalculator.Figures
 {
     /// <summary>
     /// Круг

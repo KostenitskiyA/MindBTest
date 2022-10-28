@@ -1,18 +1,18 @@
-using SquareСalculator.Figures;
+using SquareCalculator.Figures;
 using Xunit;
 
 namespace SquareCalculator.Tests
 {
     /// <summary>
-    /// Тестирование создания фигуры и вычисления её площади
+    /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРёСЏ С„РёРіСѓСЂС‹ Рё РІС‹С‡РёСЃР»РµРЅРёСЏ РµС‘ РїР»РѕС‰Р°РґРё
     /// </summary>
     public class SquareCalculatorTest
     {
         /// <summary>
-        /// Тестирование создание круга и вычисление его площади с правильными значениями
+        /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРёРµ РєСЂСѓРіР° Рё РІС‹С‡РёСЃР»РµРЅРёРµ РµРіРѕ РїР»РѕС‰Р°РґРё СЃ РїСЂР°РІРёР»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
         /// </summary>
-        /// <param name="radius">Радиус круга</param>
-        /// <param name="expected">Ожидаемая площадь круга</param>
+        /// <param name="radius">Р Р°РґРёСѓСЃ РєСЂСѓРіР°</param>
+        /// <param name="expected">РћР¶РёРґР°РµРјР°СЏ РїР»РѕС‰Р°РґСЊ РєСЂСѓРіР°</param>
         [Theory]
         [InlineData(2, 13)]
         [InlineData(3, 28)]
@@ -30,9 +30,9 @@ namespace SquareCalculator.Tests
         }
 
         /// <summary>
-        /// Тестирование создание круга с неправильными значениями
+        /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРёРµ РєСЂСѓРіР° СЃ РЅРµРїСЂР°РІРёР»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
         /// </summary>
-        /// <param name="radius">Радиус круга</param>
+        /// <param name="radius">Р Р°РґРёСѓСЃ РєСЂСѓРіР°</param>
         [Theory]
         [InlineData(0)]
         [InlineData(-1)]
@@ -43,12 +43,12 @@ namespace SquareCalculator.Tests
         }
 
         /// <summary>
-        /// Тестирование создание треугольника и вычисление его площади с правильными значениями
+        /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° Рё РІС‹С‡РёСЃР»РµРЅРёРµ РµРіРѕ РїР»РѕС‰Р°РґРё СЃ РїСЂР°РІРёР»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
         /// </summary>
-        /// <param name="sideA">Длина стороны A</param>
-        /// <param name="sideB">Длина стороны B</param>
-        /// <param name="sideC">Длина стороны C</param>
-        /// <param name="expected">Ожидаемая площадь треугольника</param>
+        /// <param name="sideA">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ A</param>
+        /// <param name="sideB">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ B</param>
+        /// <param name="sideC">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ C</param>
+        /// <param name="expected">РћР¶РёРґР°РµРјР°СЏ РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°</param>
         [Theory]
         [InlineData(1, 3, 4, 0)]
         [InlineData(3, 4, 5, 6)]
@@ -66,11 +66,11 @@ namespace SquareCalculator.Tests
         }
 
         /// <summary>
-        /// Тестирование создание треугольника с неправильными значениями
+        /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃРѕР·РґР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃ РЅРµРїСЂР°РІРёР»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
         /// </summary>
-        /// <param name="sideA">Длина стороны A</param>
-        /// <param name="sideB">Длина стороны B</param>
-        /// <param name="sideC">Длина стороны C</param>
+        /// <param name="sideA">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ A</param>
+        /// <param name="sideB">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ B</param>
+        /// <param name="sideC">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ C</param>
         [Theory]
         [InlineData(0, 3, 4)]
         [InlineData(-2, 3, 4)]
@@ -81,12 +81,12 @@ namespace SquareCalculator.Tests
         }
 
         /// <summary>
-        /// Тестирование треугольника на прямоугольность :)
+        /// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РЅР° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕСЃС‚СЊ :)
         /// </summary>
-        /// <param name="sideA">Длина стороны A</param>
-        /// <param name="sideB">Длина стороны B</param>
-        /// <param name="sideC">Длина стороны C</param>
-        /// <param name="expected">Ожидаемая прямоугольность</param>
+        /// <param name="sideA">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ A</param>
+        /// <param name="sideB">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ B</param>
+        /// <param name="sideC">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ C</param>
+        /// <param name="expected">РћР¶РёРґР°РµРјР°СЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕСЃС‚СЊ</param>
         [Theory]
         [InlineData(3, 4, 5, true)]
         [InlineData(2, 4, 4, false)]
