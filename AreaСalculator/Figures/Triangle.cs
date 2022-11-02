@@ -18,7 +18,7 @@ namespace SquareСalculator.Figures
         /// <summary>
         /// Является ли треугольник прямоугольным
         /// </summary>
-        public bool IsRightTriangle { get { return _isRightTriangle; } }
+        public bool IsRightTriangle => _isRightTriangle;
 
         /// <summary>
         /// Конструктор
@@ -26,8 +26,23 @@ namespace SquareСalculator.Figures
         /// <param name="sideA">Сторона A</param>
         /// <param name="sideB">Сторона B</param>
         /// <param name="sideC">Сторона C</param>
-        /// <exception cref="ArgumentException">Ни одна из сторон не может равняться нуню или иметь отрицательное значение</exception>
         public Triangle(double sideA, double sideB, double sideC)
+        {
+            ExistenceCheck(sideA, sideB, sideC);
+
+            _sides = new double[] { sideA, sideB, sideC };
+            _isRightTriangle = RightTriangleCheck();
+        }
+
+        /// <summary>
+        /// Проверка треугольника на существование
+        /// </summary>
+        /// <param name="sideA">Сторона A</param>
+        /// <param name="sideB">Сторона B</param>
+        /// <param name="sideC">Сторона C</param>
+        /// <returns>Может ли существовать</returns>
+        /// <exception cref="ArgumentException">При данных аргументах треугольник не может существовать</exception>
+        private void ExistenceCheck(double sideA, double sideB, double sideC)
         {
             if (sideA == 0
                 || sideA < 0
@@ -37,8 +52,10 @@ namespace SquareСalculator.Figures
                 || sideC < 0)
                 throw new ArgumentException();
 
-            _sides = new double[] { sideA, sideB, sideC };
-            _isRightTriangle = RightTriangleCheck();
+            if (sideA + sideB < sideC
+                && sideB + sideC < sideA
+                && sideA + sideC < sideB)
+                throw new ArgumentException();
         }
 
         /// <summary>
@@ -64,12 +81,10 @@ namespace SquareСalculator.Figures
         {
             var semiPerimeter = (_sides[0] + _sides[1] + _sides[2]) / 2;
 
-            _square = Math.Sqrt(semiPerimeter
+            return Math.Sqrt(semiPerimeter
                 * (semiPerimeter - _sides[0])
                 * (semiPerimeter - _sides[1])
                 * (semiPerimeter - _sides[2]));
-
-            return _square;
         }
     }
 }

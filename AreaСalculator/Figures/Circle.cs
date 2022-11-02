@@ -27,11 +27,6 @@ namespace SquareСalculator.Figures
         /// Вычисление площади круга
         /// </summary>
         /// <returns>Площадь круга</returns>
-        public sealed override double CalculateSquare()
-        {
-            _square = Math.PI * Math.Pow(_radius, 2);
-
-            return _square;
-        }
+        public sealed override double CalculateSquare() => Math.PI * Math.Pow(_radius, 2);
     }
 }

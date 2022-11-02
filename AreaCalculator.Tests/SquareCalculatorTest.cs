@@ -1,4 +1,4 @@
-using SquareCalculator.Figures;
+using SquareСalculator.Figures;
 using Xunit;
 
 namespace SquareCalculator.Tests
