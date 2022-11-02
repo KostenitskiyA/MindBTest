@@ -50,7 +50,6 @@ namespace SquareCalculator.Tests
         /// <param name="sideC">Длина стороны C</param>
         /// <param name="expected">Ожидаемая площадь треугольника</param>
         [Theory]
-        [InlineData(1, 3, 4, 0)]
         [InlineData(3, 4, 5, 6)]
         [InlineData(5, 5, 6, 12)]
         public void TriangleValidValuesTest(double sideA, double sideB, double sideC, double expected)
@@ -74,6 +73,7 @@ namespace SquareCalculator.Tests
         [Theory]
         [InlineData(0, 3, 4)]
         [InlineData(-2, 3, 4)]
+        [InlineData(1, 1, 3)]
         public void TriangleInvalidValuesTest(double sideA, double sideB, double sideC)
         {
             // Assert

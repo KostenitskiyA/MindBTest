@@ -44,17 +44,14 @@ namespace SquareСalculator.Figures
         /// <exception cref="ArgumentException">При данных аргументах треугольник не может существовать</exception>
         private void ExistenceCheck(double sideA, double sideB, double sideC)
         {
-            if (sideA == 0
-                || sideA < 0
-                || sideB == 0
-                || sideB < 0
-                || sideC == 0
-                || sideC < 0)
+            if (sideA <= 0
+                || sideB <= 0
+                || sideC <= 0)
                 throw new ArgumentException();
 
-            if (sideA + sideB < sideC
-                && sideB + sideC < sideA
-                && sideA + sideC < sideB)
+            if (sideA + sideB <= sideC
+                || sideB + sideC <= sideA
+                || sideA + sideC <= sideB)
                 throw new ArgumentException();
         }
 
